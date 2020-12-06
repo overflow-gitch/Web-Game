@@ -1,6 +1,5 @@
 //gets the canvas element and it's info for drawing.
-const canvas = document.getElementsByTagName('canvas')[0];
-const context = canvas.getContext('2d');
+
 
 
 //This creates circles that can be targeted and modified
@@ -53,17 +52,3 @@ class Bubble {
 		return (distance <= (this.radius + bubble.radius) && distance > 0);
 	}
 }
-let bubbles = [];
-let bubbleNum = 3;
-for (let index = 0; index < bubbleNum; index++) {
-    bubbles.push(new Bubble())
-    
-}
-console.log(bubbles);
-function animate() {
-    requestAnimationFrame(animate);
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    for (item of bubbles)
-        item.update();
-   }
-animate();

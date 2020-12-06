@@ -1,3 +1,14 @@
+body{
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 canvas{
+    border-top: chartreuse;
+    border-width: 10px;
+    border-style: solid ;
+    height: 500px;
+    display: flex;
     background-color: lightgray;
 }
