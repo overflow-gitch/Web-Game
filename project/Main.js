@@ -18,4 +18,4 @@ function animate() {
     player.update();
     }
 animate();
-canvas.addEventListener("mousemove", (e) => {player.moveWithMouse(e)});
+document.addEventListener("keydown", function(e) { player.movement(e) });

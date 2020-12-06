@@ -21,14 +21,24 @@ class PlayerBubble {
     update(){
         this.draw();
     }
-    moveWithMouse(e){
-        
-        if (e.clientX >= this.x - this.radius && e.clientX <= this.x + this.radius && e.clientY >= this.y - this.radius && e.clientY <= this.y + this.radius) {
-            this.x = e.clientX;
-            this.y = e.clientY;
-            this.draw();
+    movement(e){
+        const Direction = e.keyCode;
+        if (Direction === 37){
+            this.x-=10;
+            console.log("move");
         }
-        console.log(e.clientX + "," + e.clientY);
+        if (Direction === 38){
+            this.y-=10;
+            console.log("move");
+        }
+        if (Direction === 39){
+            this.x+=10;
+            console.log("move");
+        }
+        if (Direction === 40){
+            this.y+=10;
+            console.log("move");
+        }
     }
 }
 

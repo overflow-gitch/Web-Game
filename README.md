@@ -7,6 +7,6 @@ Enemy behaviour: Each game starts with lots of big bubbles that change color and
 
 General game flow: The player is expected to get to the end without touching any of the enemy bubbles. If the enemies are in contact with the player, the player loses a life. The player is either expected to move around the bubbles, or wait for them to dissapear.
 
-Controls: The player bubble will move with the mouse. 
+Controls: The player bubble will move with arrow controls.
 
 Notes: I expect to be using lots of code from the previous assignment.
