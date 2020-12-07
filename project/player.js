@@ -22,21 +22,22 @@ class PlayerBubble {
         this.draw();
     }
     movement(e){
+        const Speed = 15;
         const Direction = e.keyCode;
         if (Direction === 37){
-            this.x-=10;
+            this.x -= Speed;
             console.log("move");
         }
         if (Direction === 38){
-            this.y-=10;
+            this.y -= Speed;
             console.log("move");
         }
         if (Direction === 39){
-            this.x+=10;
+            this.x += Speed;
             console.log("move");
         }
         if (Direction === 40){
-            this.y+=10;
+            this.y += Speed;
             console.log("move");
         }
     }
