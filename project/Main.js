@@ -9,6 +9,11 @@ for (let index = 0; index < bubbleNum; index++) {
 }
 console.log(bubbles);
 let player = new PlayerBubble(250,475);
+
+function gameOver(){
+    console.log("game is over. go home.")
+}
+
 function animate() {
     requestAnimationFrame(animate);
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -16,6 +21,8 @@ function animate() {
         item.update();
     }
     player.update();
+    if (player.y - player.radius <= 0)
+        gameOver();
 }
 animate();
 document.addEventListener("keydown", function(e) { player.movement(e) });

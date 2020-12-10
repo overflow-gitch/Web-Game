@@ -28,6 +28,9 @@ class Bubble {
                 this.velocity.y = -this.velocity.y;
                 this.color = 'rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ')'             
             }
+            if (this.isColliding(player)){
+                gameOver();
+            }
 		}
         this.x += this.velocity.x;
         this.y += this.velocity.y;
