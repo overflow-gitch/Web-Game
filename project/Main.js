@@ -11,14 +11,20 @@ console.log(bubbles);
 let player = new PlayerBubble(250,475);
 
 function gameOver(win){
-    if (win)
-        console.log("huh, you won.")
-    else
-        console.log("game is over. go home.")
-}
+    let gameOverText = document.createElement("h2");
 
+    if (win){
+        gameOverText.innerHTML = "huh, you won."
+    }
+    else
+        gameOverText.innerHTML = "game is over. go home."
+    cancelAnimationFrame(request);
+    //document.body.removeChild(canvas);
+    document.body.replaceChild(gameOverText, canvas);
+}
+let request;
 function animate() {
-    requestAnimationFrame(animate);
+    request = requestAnimationFrame(animate);
     context.clearRect(0, 0, canvas.width, canvas.height);
     for (item of bubbles){
         item.update();
