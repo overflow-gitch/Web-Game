@@ -19,10 +19,10 @@ class PlayerBubble {
     movement(e){
         const Speed = 15;
         const Direction = e.keyCode;
-        if (Direction === 37 && this.x - this.radius > 0){
+        if (Direction === 37 && this.x - this.radius > canvas.clientLeft){
             this.x -= Speed;
         }
-        if (Direction === 38 && this.y - this.radius > 0){
+        if (Direction === 38 && this.y - this.radius > canvas.clientTop){
             this.y -= Speed;
         }
         if (Direction === 39 && this.x + this.radius < canvas.clientWidth){
