@@ -1,7 +1,3 @@
-//gets the canvas element and it's info for drawing.
-
-
-
 //This creates circles that can be targeted and modified
 class Bubble {
     constructor(){

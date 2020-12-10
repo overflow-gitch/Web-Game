@@ -1,9 +1,4 @@
-//gets the canvas element and it's info for drawing.
-//const canvas = document.getElementsByTagName('canvas')[0];
-//const context = canvas.getContext('2d');
-
-
-//This creates circles that can be targeted and modified
+//This creates circles that can be contolled
 class PlayerBubble {
     constructor(x, y){
         this.x = x;
@@ -24,21 +19,17 @@ class PlayerBubble {
     movement(e){
         const Speed = 15;
         const Direction = e.keyCode;
-        if (Direction === 37){
+        if (Direction === 37 && this.x - this.radius > 0){
             this.x -= Speed;
-            console.log("move");
         }
-        if (Direction === 38){
+        if (Direction === 38 && this.y - this.radius > 0){
             this.y -= Speed;
-            console.log("move");
         }
-        if (Direction === 39){
+        if (Direction === 39 && this.x + this.radius < canvas.clientWidth){
             this.x += Speed;
-            console.log("move");
         }
-        if (Direction === 40){
+        if (Direction === 40 && this.y + this.radius < canvas.clientWidth){
             this.y += Speed;
-            console.log("move");
         }
     }
 }
