@@ -30,6 +30,8 @@ class Bubble {
             }
             if (this.isColliding(player)){
                 gameOver(false);
+                //stops the bubbles from incorrectly triggering multiple gameovers.
+                break;
             }
 		}
         this.x += this.velocity.x;
