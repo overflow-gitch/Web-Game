@@ -24,6 +24,8 @@ const lives = document.getElementById("lives");
 const points = document.getElementById("points");
 let liveCount = 3;
 let pointCount = 0;
+let celebration = new Audio('Ta Da-SoundBible.com-1884170640.mp3');
+
 
 function newGame(){
     for (let index = 0; index < bubbleNum; index++) {
@@ -38,14 +40,10 @@ function newGame(){
 }
 let bubbles = [];
 let bubbleNum = 3;
-for (let index = 0; index < bubbleNum; index++) {
-    bubbles.push(new Bubble());
-}
-console.log(bubbles);
-let player = new PlayerBubble(250,475);
 
 function gameOver(win){
     if (win){
+        celebration.play();
         gameOverText.innerHTML = "huh, you won."
         pointCount++;
         points.innerHTML = "points:" + pointCount;
@@ -74,10 +72,10 @@ function animate() {
     if (player.y - player.radius <= canvas.clientTop)
         gameOver(true);
 }
-animate();
 start.addEventListener("click", function(){
     document.body.removeChild(start);
     document.body.removeChild(introText);
     document.body.appendChild(canvas);
+    newGame();
 })
 document.addEventListener("keydown", function(e) { player.movement(e) });

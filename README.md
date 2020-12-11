@@ -10,3 +10,7 @@ General game flow: The player is expected to get to the end without touching any
 Controls: The player bubble will move with arrow controls.
 
 Notes: I expect to be using lots of code from the previous assignment.
+Sounds from: 
+http://soundbible.com/1442-Cupboard-Door-Close.html (modified to be shortened)
+http://soundbible.com/1003-Ta-Da.html (sound used when winning a point)
+http://soundbible.com/1773-Strong-Punch.html (sound used when getting hit by enemy)

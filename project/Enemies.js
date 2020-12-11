@@ -1,4 +1,6 @@
 //This creates circles that can be targeted and modified
+let bump = new Audio('Cupboard Door Close-SoundBible.com-399662278.mp3');
+let hit = new Audio('Strong_Punch-Mike_Koenig-574430706.mp3');
 class Bubble {
     constructor(){
         this.radius = 30;
@@ -26,11 +28,13 @@ class Bubble {
 			if (this.isColliding(bubble)) {
                 this.velocity.x = -this.velocity.x;
                 this.velocity.y = -this.velocity.y;
-                    this.modifyBehaviour();
+                this.modifyBehaviour();
+                bump.play();
             }
             if (this.isColliding(player)){
                 gameOver(false);
                 //stops the bubbles from incorrectly triggering multiple gameovers.
+                hit.play();
                 break;
             }
 		}
@@ -42,9 +46,11 @@ class Bubble {
     checkCanvasBounds() {
 		if ((this.x + this.radius) > canvas.width || (this.x - this.radius) < 0) {
             this.velocity.x = -this.velocity.x;
+            bump.play();
 		}
 		if ((this.y + this.radius) > canvas.height || (this.y - this.radius) < 0) {
-			this.velocity.y = -this.velocity.y;
+            this.velocity.y = -this.velocity.y;
+            bump.play();
         }
     }
     isColliding(bubble) {
