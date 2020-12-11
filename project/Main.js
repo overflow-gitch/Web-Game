@@ -10,6 +10,10 @@ replayButton.addEventListener("click", function () {
     document.body.removeChild(replayButton);
     newGame();
 });
+const lives = document.getElementById("lives");
+const points = document.getElementById("points");
+let liveCount = 3;
+let pointCount = 0;
 
 function newGame(){
     for (let index = 0; index < bubbleNum; index++) {
@@ -32,9 +36,14 @@ let player = new PlayerBubble(250,475);
 function gameOver(win){
     if (win){
         gameOverText.innerHTML = "huh, you won."
+        pointCount++;
+        points.innerHTML = "points:" + pointCount;
     }
-    else
+    else{
         gameOverText.innerHTML = "game is over. go home."
+        liveCount--;
+        lives.innerHTML = "Lives:" + liveCount;
+    }
     cancelAnimationFrame(request);
     document.body.replaceChild(gameOverText, canvas);
     document.body.appendChild(replayButton);
