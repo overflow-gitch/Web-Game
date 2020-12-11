@@ -13,3 +13,6 @@ canvas{
     display: flex;
     background-color: lightgray;
 }
+p{
+    margin: 50px;
+}

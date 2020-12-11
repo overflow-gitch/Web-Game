@@ -8,7 +8,7 @@ class Bubble {
 			x: 1,
 			y: 1
         }
-        this.color = context.fillStyle = "white";
+        this.color = context.fillStyle = "green";
     }
     draw(){
         context.beginPath();

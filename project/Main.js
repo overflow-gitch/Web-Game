@@ -1,6 +1,10 @@
-const canvas = document.getElementsByTagName('canvas')[0];
+const canvas = document.createElement('canvas');
+canvas.height = 500;
+canvas.width = 500;
 const context = canvas.getContext('2d');
 let saveState = canvas;
+const start = document.getElementById("startButton");
+const introText = document.getElementById("introText");
 const gameOverText = document.createElement("h2");
 const replayButton = document.createElement("button");
 replayButton.style.display = "block";
@@ -69,4 +73,9 @@ function animate() {
         gameOver(true);
 }
 animate();
+start.addEventListener("click", function(){
+    document.body.removeChild(start);
+    document.body.removeChild(introText);
+    document.body.appendChild(canvas);
+})
 document.addEventListener("keydown", function(e) { player.movement(e) });
