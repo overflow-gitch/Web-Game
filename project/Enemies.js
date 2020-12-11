@@ -22,7 +22,6 @@ class Bubble {
         this.checkCanvasBounds();
 
         for (let bubble of bubbles) {
-            //bubble.checkCanvasBounds();
 			if (this.isColliding(bubble)) {
                 this.velocity.x = -this.velocity.x;
                 this.velocity.y = -this.velocity.y;

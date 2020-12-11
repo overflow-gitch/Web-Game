@@ -8,6 +8,12 @@ replayButton.innerHTML = "Replay";
 replayButton.addEventListener("click", function () {
     document.body.replaceChild(canvas, gameOverText);
     document.body.removeChild(replayButton);
+    if (liveCount <= 0){
+        liveCount = 3;
+        pointCount = 0;
+        lives.innerHTML = "Lives:" + liveCount;
+        points.innerHTML = "points:" + pointCount;
+    }
     newGame();
 });
 const lives = document.getElementById("lives");
@@ -40,9 +46,12 @@ function gameOver(win){
         points.innerHTML = "points:" + pointCount;
     }
     else{
-        gameOverText.innerHTML = "game is over. go home."
+        gameOverText.innerHTML = "game is over. go home.";
         liveCount--;
         lives.innerHTML = "Lives:" + liveCount;
+    }
+    if (liveCount <= 0){
+        gameOverText.innerHTML = "You have lost all your lives, game will restart next time.";
     }
     cancelAnimationFrame(request);
     document.body.replaceChild(gameOverText, canvas);
