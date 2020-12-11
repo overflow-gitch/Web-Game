@@ -29,6 +29,7 @@ function newGame(){
     for (let index = 0; index < bubbleNum; index++) {
         bubbles.pop(bubbles[index]);
     }
+    bubbleNum = 3 + Math.floor(Math.random() * pointCount);
     for (let index = 0; index < bubbleNum; index++) {
         bubbles.push(new Bubble());
     }
@@ -58,7 +59,8 @@ function gameOver(win){
         gameOverText.innerHTML = "You have lost all your lives, game will restart next time.";
     }
     cancelAnimationFrame(request);
-    document.body.replaceChild(gameOverText, canvas);
+    document.body.removeChild(canvas);
+    document.body.appendChild(gameOverText);
     document.body.appendChild(replayButton);
 }
 let request;

@@ -1,7 +1,7 @@
 //This creates circles that can be targeted and modified
 class Bubble {
     constructor(){
-        this.radius = 20;
+        this.radius = 30;
         this.x = this.radius + (Math.random() * (canvas.width - (this.radius * 2)));
 		this.y = this.radius + (Math.random() * (canvas.height - (this.radius * 2)));
         this.velocity = {
@@ -9,6 +9,7 @@ class Bubble {
 			y: 1
         }
         this.color = context.fillStyle = "green";
+        this.timesHit = 0;
     }
     draw(){
         context.beginPath();
@@ -25,7 +26,7 @@ class Bubble {
 			if (this.isColliding(bubble)) {
                 this.velocity.x = -this.velocity.x;
                 this.velocity.y = -this.velocity.y;
-                this.color = 'rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ')'             
+                    this.modifyBehaviour();
             }
             if (this.isColliding(player)){
                 gameOver(false);
@@ -50,5 +51,19 @@ class Bubble {
         //The logic behind this code was taken from last semester's UI project. This is because finding the distance between two points means to do the math as done in math.hypot method.
 		let distance = Math.hypot(this.x - bubble.x, this.y - bubble.y);
 		return (distance <= (this.radius + bubble.radius) && distance > 0);
-	}
+    }
+    modifyBehaviour(){
+        if (this.color === "yellow"){
+            this.color = "red";
+            this.velocity.x *= 2;
+            this.velocity.y *= 2;
+            this.radius -= 10;
+        }
+        if (this.color === "green"){
+            this.color = "yellow";
+            this.velocity.x *= 2;
+            this.velocity.y *= 2;
+            this.radius -= 10;
+        }
+    }
 }
