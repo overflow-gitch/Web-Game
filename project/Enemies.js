@@ -59,6 +59,9 @@ class Bubble {
 		return (distance <= (this.radius + bubble.radius) && distance > 0);
     }
     modifyBehaviour(){
+        if (this.color === "red"){
+            bubbles.splice(bubbles.indexOf(this), 1);
+        }
         if (this.color === "yellow"){
             this.color = "red";
             this.velocity.x *= 2;

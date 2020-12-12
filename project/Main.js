@@ -54,7 +54,7 @@ function gameOver(win){
         lives.innerHTML = "Lives:" + liveCount;
     }
     if (liveCount <= 0){
-        gameOverText.innerHTML = "You have lost all your lives, game will restart next time.";
+        gameOverText.innerHTML = "You have lost all your lives, the game will restart next time.";
     }
     cancelAnimationFrame(request);
     document.body.removeChild(canvas);
