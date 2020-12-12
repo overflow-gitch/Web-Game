@@ -68,6 +68,7 @@ class Bubble {
 		let distance = Math.hypot(this.x - bubble.x, this.y - bubble.y);
 		return (distance <= (this.radius + bubble.radius) && distance > 0);
     }
+    //depending on the color, affects speed, size and existince of an enemy.
     modifyBehaviour(){
         if (this.color === "red"){
             bubbles.splice(bubbles.indexOf(this), 1);

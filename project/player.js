@@ -16,6 +16,7 @@ class PlayerBubble {
     update(){
         this.draw();
     }
+    //responsible for movement of the player.
     movement(e){
         const Speed = 15;
         const Direction = e.keyCode;
