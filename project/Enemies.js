@@ -1,14 +1,24 @@
 //This creates circles that can be targeted and modified
 let bump = new Audio('Cupboard Door Close-SoundBible.com-399662278.mp3');
 let hit = new Audio('Strong_Punch-Mike_Koenig-574430706.mp3');
+
+//area in which enemies will not spawn.
+const leniencyArea = 100;
+
 class Bubble {
     constructor(){
         this.radius = 30;
-        this.x = this.radius + (Math.random() * (canvas.width - (this.radius * 2)));
-		this.y = this.radius + (Math.random() * (canvas.height - (this.radius * 2)));
+        this.x = this.radius + (Math.random() * ((canvas.width - leniencyArea) - (this.radius * 2)));
+		this.y = this.radius + (Math.random() * ((canvas.height - leniencyArea) - (this.radius * 2)));
         this.velocity = {
 			x: 1,
 			y: 1
+        }
+        if (Math.random > 0.5) {
+            this.velocity.x = -this.velocity.x;
+        }
+        if (Math.random > 0.5) {
+            this.velocity.y = -this.velocity.y;
         }
         this.color = context.fillStyle = "green";
         this.timesHit = 0;
