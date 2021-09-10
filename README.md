@@ -1,4 +1,4 @@
-# WebProgrammingProject
+# Web Game
 A game made with html canvas
 
 Object of game: you are a small bubble at the bottom of the screen. Get to the top without touching any of the other bubbles.
